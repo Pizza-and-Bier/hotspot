@@ -12,53 +12,28 @@ module.exports = function (grunt) {
             '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
             ' Licensed <%= pkg.license %> */\n',
         // Task configuration
-        concat: {
-            options: {
-                banner: '<%= banner %>',
-                stripBanners: true
-            },
-            dist: {
-                src: ['build/src/**/*.js'],
-                dest: 'build/hotspots.js'
-            }
-        },
+
         uglify: {
             options: {
                 banner: '<%= banner %>'
             },
             dist: {
-                src: '<%= concat.dist.dest %>',
-                dest: 'build/hotspots.min.js'
+                src: 'build/Hotspot.js',
+                dest: 'build/Hotspot.min.js'
             }
         },
-        jshint: {
-            options: {
-                node: true,
-                curly: true,
-                eqeqeq: true,
-                immed: true,
-                latedef: true,
-                newcap: true,
-                noarg: true,
-                sub: true,
-                undef: true,
-                unused: true,
-                eqnull: true,
-                browser: true,
-                globals: { jQuery: true },
-                boss: true,
-                esnext: true
-            },
-            gruntfile: {
-                src: 'gruntfile.js'
-            },
-            lib_test: {
-                src: ['lib/**/*.js', 'test/**/*.js']
+
+        concat: {
+            dist: {
+                src: ["build/src/**/*.js"],
+                dest: "build/Hotspot.js"
             }
         },
+
         qunit: {
             files: ['test/**/*.html']
         },
+
         watch: {
             gruntfile: {
                 files: '<%= jshint.gruntfile.src %>',
@@ -72,16 +47,14 @@ module.exports = function (grunt) {
 
         babel: {
             options: {
-                sourceMap: false,
                 presets: ["es2015"]
             },
             dist: {
                 files: [{
                     expand: true,
                     cwd: "lib/",
-                    src: "**/*.js",
-                    dest: "build/src",
-                    ext: ".js"
+                    src: ["**/*.js"],
+                    dest: "build/src/"
                 }]
             }
         },
@@ -105,7 +78,8 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks("grunt-babel");
     grunt.loadNpmTasks("grunt-jsdoc");
 
+
     // Default task
-    grunt.registerTask('default', ['jshint', "babel", 'concat', 'uglify', "jsdoc"]);
+    grunt.registerTask("default", ["babel", "concat", "uglify", "jsdoc"]);
 };
 
