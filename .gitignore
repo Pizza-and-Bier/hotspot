@@ -102,3 +102,5 @@ bower_components
 .bower-tmp
 
 test
+
+.yo-rc.json
