@@ -8,7 +8,7 @@ function Hotspot(width, height) {
 
 	this.defaultWidth = width || null;
 	this.defaultHeight = height || null;
-	this.images = [];
+	this.images = {};
 }
 
 Hotspot.prototype.getImages = function () {
