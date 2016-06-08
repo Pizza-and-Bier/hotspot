@@ -73,6 +73,7 @@ module.exports = function (grunt) {
 
 
     // Default task
-    grunt.registerTask("default", ["babel", "concat", "uglify", "jsdoc"]);
+    grunt.registerTask("default", ["babel", "concat", "uglify"]);
+    grunt.registerTask("dosc", ["jsdoc"])
 };
 
