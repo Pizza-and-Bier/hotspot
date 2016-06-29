@@ -61,6 +61,12 @@ module.exports = function (grunt) {
             options: {
                 destination: "docs/"
             }
+        },
+
+        strictly: {
+            files: [
+                "lib/**/*.js"
+            ]
         }
     });
 
@@ -70,10 +76,10 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks("grunt-babel");
     grunt.loadNpmTasks("grunt-jsdoc");
+    grunt.loadNpmTasks("strictly");
 
 
     // Default task
-    grunt.registerTask("default", ["babel", "concat", "uglify"]);
-    grunt.registerTask("dosc", ["jsdoc"])
+    grunt.registerTask("default", ["strictly", "babel", "concat", "uglify"]);
 };
 

@@ -1,0 +1,20 @@
+{
+  "name": "hotspots",
+  "description": "place clickable hotspots in images",
+  "main": "build/Hotspot.min.js",
+  "authors": [
+    "Anthony Pizzimenti and Cale Bierman"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/Pizza-and-Bier/hotspots",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6"
+  }
+}
