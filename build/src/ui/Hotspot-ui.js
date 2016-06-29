@@ -13,7 +13,7 @@ HotspotUi.prototype.open = function (config) {
 	this.Hotspot = new Hotspot();
 	this.modalContainer = document.getElementById(config.modalId);
 
-	modalContainer.innerHTML = globals.modal;
+	this.modalContainer.innerHTML = globals.modal;
 };
 
 HotspotUi.prototype.crawl = function () {};

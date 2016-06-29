@@ -283,7 +283,7 @@ Hotspot_Image.prototype.addPoint = function (x, y, radius) {
  * Created by apizzimenti on 6/24/16.
  */
 
-globals = {
+var globals = {
 	modal: {
 		div: {
 			attrs: [{ id: "w/e" }]
@@ -306,7 +306,7 @@ HotspotUi.prototype.open = function (config) {
 	this.Hotspot = new Hotspot();
 	this.modalContainer = document.getElementById(config.modalId);
 
-	modalContainer.innerHTML = globals.modal;
+	this.modalContainer.innerHTML = globals.modal;
 };
 
 HotspotUi.prototype.crawl = function () {};
